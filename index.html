@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f32">
+  <title>Gill Spray Centre (GSC) ERP</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">🌿</div><div><b>Gill Spray Centre</b><small>GSC · Business management</small></div></div>
+      <div class="user-chip"><span class="avatar">A</span><div><b id="userName">Owner</b><small id="userRole">Administrator</small></div></div>
+      <nav id="nav">
+        <button class="nav-item active" data-page="dashboard">▦ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="sales">＋ <span>New Sale / POS</span></button>
+        <button class="nav-item" data-page="customers">♙ <span>Customers & Credit</span></button>
+        <button class="nav-item" data-page="products">▤ <span>Products & Stock</span></button>
+        <button class="nav-item" data-page="companies">▥ <span>Companies</span></button>
+        <button class="nav-item" data-page="purchases">⇩ <span>Purchases</span></button>
+        <button class="nav-item" data-page="payments">৳ <span>Payments</span></button>
+        <button class="nav-item" data-page="expenses">− <span>Expenses</span></button>
+        <button class="nav-item" data-page="reports">▧ <span>Reports</span></button>
+        <button class="nav-item" data-page="cloud">☁ <span>Cloud Sync & Team</span></button>
+        <button class="nav-item" data-page="settings">⚙ <span>Settings & Backup</span></button>
+      </nav>
+      <div class="side-foot"><span class="online-dot"></span> Offline-ready · Local database</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><button id="menuToggle" class="mobile-menu">☰</button><span class="eyebrow">GILL SPRAY CENTRE · GSC</span><h1 id="pageTitle">Dashboard</h1></div><div class="top-actions"><span id="todayLabel"></span><button class="btn btn-light" id="quickBackup">⇧ Backup</button></div></header>
+      <section id="content" class="content"></section>
+      <footer> Gill Spray Centre (GSC) <span>·</span> Data stored on this device <span>·</span> Make regular backups</footer>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root"></div>
+  <script src="app.js"></script>
+  <script type="module" src="cloud.js"></script>
+</body>
+</html>
