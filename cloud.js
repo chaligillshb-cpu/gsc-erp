@@ -77,6 +77,7 @@ async function sync(){
     const {data:rows,error}=await c.rpc('sync_pull_records',{p_shop_id:shopId});
     if(error) throw error;
     await applyCloudRows(rows||[]);
+    window.dispatchEvent(new Event("erp:cloud-synced"));
     const remaining=(await getOutbox()).length;
     return {message:`Synced ${pushed} local change(s); received ${rows?.length||0} cloud record(s). ${remaining} change(s) remain queued.`,shop:shop.shop_name,role:shop.role};
   } finally {syncBusy=false}
